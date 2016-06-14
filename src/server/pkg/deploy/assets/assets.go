@@ -583,10 +583,7 @@ func WriteAssets(w io.Writer, shards uint64, backend backend, volumeName string,
 	fmt.Fprintf(w, "\n")
 }
 
-func WriteLocalAssets(w io.Writer, shards uint64, hostPath string, version string) {
-	if version != "" {
-		pachdImage = fmt.Sprintf("%v:%v", pachdImage, version)
-	}
+func WriteLocalAssets(w io.Writer, shards uint64, hostPath string) {
 	WriteAssets(w, shards, localBackend, "", 0, hostPath)
 }
 
